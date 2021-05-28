@@ -52,7 +52,7 @@ ScalarString::operator double() const
 {
   char* end;
   double n = std::strtod(number.c_str(), &end);
-  if (*end != '\0')
+  if (number.c_str() == end)
     throw ImpossibleException();
   return n;
 }
