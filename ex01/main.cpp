@@ -3,6 +3,7 @@
 
 int main()
 {
+  srand(time(0));
   void* raw = serialize();
   Data* data = deserialize(raw);
 
