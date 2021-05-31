@@ -17,8 +17,8 @@ void* serialize(void)
   std::string* s2 = createRandomString();
 
   *(reinterpret_cast<std::string**>(raw)) = s1;
-  *(reinterpret_cast<int*>(raw + sizeof(std::string**))) =  n;
-  *(reinterpret_cast<std::string**>(raw + sizeof(std::string**) + sizeof(int))) = s2;
+  *(reinterpret_cast<int*>(raw + sizeof(void*))) =  n;
+  *(reinterpret_cast<std::string**>(raw + sizeof(void*) + sizeof(int))) = s2;
   return static_cast<void*>(raw);
 }
 
@@ -27,7 +27,7 @@ Data* deserialize(void* _raw)
   char* raw = static_cast<char*>(_raw);
   Data* data = new Data();
   data->s1 = *reinterpret_cast<std::string**>(raw);
-  data->n = *reinterpret_cast<int*>(raw + sizeof(std::string**));
-  data->s2 = *reinterpret_cast<std::string**>(raw + sizeof(std::string**) + sizeof(int));
+  data->n = *reinterpret_cast<int*>(raw + sizeof(void*));
+  data->s2 = *reinterpret_cast<std::string**>(raw + sizeof(void*) + sizeof(int));
   return (data);
 }
