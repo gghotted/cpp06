@@ -1,15 +1,10 @@
 #ifndef BASE_HPP
-# define BASE_HPP
-# include <iostream>
-# include <time.h>
-
-
+#define BASE_HPP
 
 class Base
 {
 public:
   virtual ~Base();
 };
-
 
 #endif
