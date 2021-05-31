@@ -1,5 +1,6 @@
-#include "ScalarString.hpp"
 #include <iostream>
+#include <iomanip>
+#include "ScalarString.hpp"
 
 int main(int argc, char **argv)
 {

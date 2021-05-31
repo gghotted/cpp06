@@ -1,11 +1,9 @@
 #ifndef SCALARSTRING_HPP
 #define SCALARSTRING_HPP
 
-#include <iostream>
 #include <string>
 #include <exception>
 #include <limits>
-#include <iomanip>
 
 class ScalarString
 {
